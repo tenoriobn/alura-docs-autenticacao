@@ -5,6 +5,9 @@ import registrarEventosLogin from "./registrarEventos/login.js";
 import registrarEventosInicio from "./registrarEventos/inicio.js";
 import registrarEventosDocumento from "./registrarEventos/documento.js";
 import io from "./servidor.js";
+import autorizarUsuario from "./middlewares/autorizarUsuario.js";
+
+io.use(autorizarUsuario);
 
 io.on("connection", (socket) => {
 
